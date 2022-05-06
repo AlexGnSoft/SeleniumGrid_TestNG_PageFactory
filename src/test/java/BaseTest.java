@@ -1,13 +1,10 @@
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.*;
 import pages.HomePage;
 import utils.CapabilityFactory;
-
 import java.net.MalformedURLException;
 import java.net.URL;
-
 import static pages.constants.Constants.Urls.WEB_SITE_HUB;
 import static pages.constants.Constants.Urls.WEB_SITE_URL;
 
@@ -18,7 +15,7 @@ public class BaseTest {
 
     @BeforeMethod
     @Parameters(value = {"browser"})
-    public void setUp(@Optional("chrome")String browser) throws MalformedURLException{
+    public void setUp(@Optional("firefox")String browser) throws MalformedURLException{
 
         driver.set(new RemoteWebDriver(new URL(WEB_SITE_HUB), capabilityFactory.getCapabilities(browser)));
         getDriver().manage().window().maximize();
@@ -38,9 +35,7 @@ public class BaseTest {
     public WebDriver getDriver(){
         return driver.get();
     }
-
-    public HomePage getHopePage(){
+    public HomePage getHomePage(){
         return new HomePage(getDriver());
     }
-
 }

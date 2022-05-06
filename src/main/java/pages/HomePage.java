@@ -18,8 +18,8 @@ public class HomePage extends BasePage{
     @FindBy(xpath = "//div[@class='nl-cart']/a[@href='/en/shopping-cart.html']")
     private WebElement cartIcon;
 
-    @FindBy(xpath = "//a[@class='nl-pencil-banner__language']")
-    private WebElement languageButton;
+    @FindBy(xpath = "//div[@class='kampyle_button-text'][text()='Feedback']")
+    private WebElement feedbackButton;
 
     @FindBy(xpath = "//button[@data-link-value='Sign in']")
     private WebElement signInButton;
@@ -51,57 +51,26 @@ public class HomePage extends BasePage{
     public HomePage(WebDriver driver) {
         super(driver);
     }
-
     public void isHeaderVisible(){
         header.isDisplayed();
     }
-
     public void isFooterVisible(){
         footer.isDisplayed();
     }
-
     public void isSocialMediaVisible(){
         socialMediaIcons.isDisplayed();
     }
-
     public void isCartIconVisible(){
         cartIcon.isDisplayed();
     }
-
-    public void getLanguageButtonText(){
-        languageButton.getText();
+    public void isSearchFieldVisible(){
+        searchField.isDisplayed();
     }
-
-    public void SignInButtonVisible(){
-        signInButton.isDisplayed();
+    public String getFeedbackButtonText(){
+        return feedbackButton.getText();
     }
-
-    public void RegisterButtonVisible(){
-        registerButton.isDisplayed();
-    }
-
-    public WebElement getSignInPopup(){
-        return signInPopup;
-    }
-
-    public void isEmailVisible(){
-        emailField.isDisplayed();
-    }
-
-    public void isPasswordVisible(){
-        passwordField.isDisplayed();
-    }
-
-    public void clickSignInPopupButton(){
-        signInPopupCloseButton.click();
-    }
-
     public void clickAutomotiveStoreButton(){
         automotiveStoreButton.isDisplayed();
-    }
-
-    public void searchFieldVisible(){
-        searchField.isDisplayed();
     }
 
     public void enterTextToSearchField(String searchedProduct){
@@ -116,5 +85,9 @@ public class HomePage extends BasePage{
     public int getAmountOfProductInWishList(){
         int wishProducts = Integer.parseInt(wishListIcon.getText());
         return wishProducts;
+    }
+
+    public WebElement getFeedbackButton(){
+        return feedbackButton;
     }
 }
