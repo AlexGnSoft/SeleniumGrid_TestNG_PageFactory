@@ -4,7 +4,7 @@ public class Constants {
 
     public static class Urls{
         public static final String  WEB_SITE_URL = "https://www.canadiantire.ca/";
-        public static final String  WEB_SITE_HUB = "http://192.168.1.67:4444";
+        public static final String  WEB_SITE_HUB = "http://192.168.1.67:4444/";
     }
 
     public static class TimeoutVariables{
