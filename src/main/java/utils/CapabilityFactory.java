@@ -7,7 +7,7 @@ public class CapabilityFactory {
     public Capabilities capabilities; //browser settings
 
     public Capabilities getCapabilities(String browser){
-        if(browser.equals("firefox")){
+        if(browser.equals("chrome")){
             capabilities = OptionsManager.getFirefoxOptions();
         }else {
             capabilities = OptionsManager.getChromeOptions();
