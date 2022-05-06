@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="tests.SmokeTests">
+    <test name="tests.SmokeTestsChrome" parallel="methods" thread-count="1">
+        <parameter name="browser" value="chrome">
+            <class name="tests.SmokeTests">
+                <methods>
+                    <include name="checkMainComponentsVisibilityOnHomePage"/>
+                </methods>
+            </class>
+        </parameter>
+        <classes/>
+    </test>
+
+    <test name="tests.SmokeTestsFirefox" parallel="methods" thread-count="1">
+        <parameter name="browser" value="firefox">
+            <class name="tests.SmokeTests">
+                <methods>
+                    <include name="checkMainComponentsVisibilityOnHomePage"/>
+                </methods>
+            </class>
+        </parameter>
+        <classes/>
+    </test>
+</suite>
