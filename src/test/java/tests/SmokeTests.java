@@ -1,8 +1,11 @@
+package tests;
 
 import org.testng.annotations.Test;
+import tests.BaseTest;
+
 import static org.testng.Assert.assertTrue;
 
-public class SmokeTests extends BaseTest{
+public class SmokeTests extends BaseTest {
 
     @Test
     public void checkMainComponentsVisibilityOnHomePage() {
